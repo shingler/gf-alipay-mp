@@ -1,0 +1,138 @@
+page {
+  flex: 1;
+  display: flex;
+  background: #323239;
+  font-family: "pingFang SC" "pingFang";
+}
+
+.page {
+  display: block;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 100px;
+  box-sizing: border-box;
+  /* background-image: linear-gradient(90deg, #1F81E5 0%, #3264C5 99%); */
+}
+.page-content {
+  margin: 0 16px 26px;
+  box-sizing: border-box;
+  background: #FAFCFF;
+  border-radius: 16px;
+  box-sizing: border-box;
+  min-height: 90%;
+  position: relative;
+  padding-bottom: 125px;
+  overflow: hidden;
+}
+
+.container {
+  background: #F5F5F5;
+  padding: 24rpx;
+  height: 100%;
+}
+
+.container-item {
+  margin-bottom: 24rpx;
+}
+
+.footer {
+  color: #333;
+  margin-top: 24rpx;
+  padding-left: 12px;
+}
+
+.item {
+  /* background: #eeeeee; */
+  text-align: center;
+  height: 200rpx;
+}
+
+.grid-item {
+  background: #eeeeee;
+  text-align: center;
+}
+
+.page-description {
+  margin-bottom: 32rpx;
+}
+
+.page-section {
+  background: #fff;
+  margin-bottom: 32rpx;
+}
+
+.page-section-title {
+  padding: 16rpx 32rpx;
+}
+
+.page-section-demo {
+  padding: 32rpx;
+}
+
+.page-section-btns {
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.page-section-btns > view {
+  flex: 1;
+  height: 84rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #49a9ee;
+}
+.page-section-btns > view + view {
+  border-left: 1px solid #ddd;
+}
+
+button {
+  margin-top:20rpx;
+  margin-bottom:20rpx;
+}
+
+.bc_blue {
+  background-color: #49A9EE;
+}
+
+.bc_red {
+  background-color: #F04134;
+}
+
+.bc_yellow {
+  background-color: #FFBF00;
+}
+
+.bc_green {
+  background-color: #00A854;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  height: 88rpx;
+  align-items: center;
+}
+
+.form-row-label {
+  width: 180rpx;
+  font-size: 34rpx;
+  margin-right: 10rpx;
+  text-align: left;
+  color: #000;
+}
+
+.form-row-content {
+  flex: 1;
+  font-size: 34rpx;
+}
+
+.form-line {
+  height: 1px;
+  background-color: #ddd;
+  margin-left: 30rpx;
+}
+

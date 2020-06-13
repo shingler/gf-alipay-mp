@@ -1,0 +1,12 @@
+<view class="page">
+  <view class="page-content">
+    <am-search-bar placeholder="Search" onInput="search_shelf" onClear="search_clear"></am-search-bar>
+    <am-title iconURL="https://gw.alipayobjects.com/mdn/miniProgram_mendian/afts/img/A*wiFYTo5I0m8AAAAAAAAAAABjAQAAAQ/original" hasLine="{{true}}">游戏列表</am-title>
+    <am-list a:for="{{result}}" a:for-index="idx" a:for-item="item">
+      <list-item thumb="{{item.mp_cover[0]}}" arrow="{{true}}" upperSubtitle="{{item.hasChinese?'有中文':''}}" onClick="go_detail" data-gid="{{item.gameId}}">
+        {{item.titleCh}}
+      </list-item>
+    </am-list>
+  </view>
+</view>
+<view></view>

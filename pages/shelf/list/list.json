@@ -1,0 +1,9 @@
+{
+  "defaultTitle": "游方-游戏列表",
+  "usingComponents": {
+    "am-search-bar": "mini-ali-ui/es/search-bar/index",
+    "am-title": "mini-ali-ui/es/title/index",
+    "am-list": "mini-ali-ui/es/list/index",
+    "list-item": "mini-ali-ui/es/list/list-item/index"
+  }
+}

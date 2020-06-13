@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "游方-媒体评测",
+  "usingComponents": {
+    "container": "mini-ali-ui/es/container/index",
+    "title": "mini-ali-ui/es/title/index",
+    "badge": "mini-ali-ui/es/badge/index"
+  }
+}

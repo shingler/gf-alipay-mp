@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/shelf/list/list",
+    "pages/shelf/detail/detail",
+    "pages/shelf/magazine/magazine"
+  ],
+  "plugins": {
+    "myPlugin": {
+      "version": "*",
+      "provider": "2019120769656826"
+    }
+  },
+  "window": {
+    "transparentTitle": "always",
+    "titlePenetrate": true,
+    "backgroundImageColor": "#3264C5"
+  }
+}

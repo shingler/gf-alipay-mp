@@ -1,0 +1,10 @@
+{
+  "defaultTitle": "游方-游戏详情",
+  "usingComponents": {
+    "container": "mini-ali-ui/es/container/index",
+    "title": "mini-ali-ui/es/title/index",
+    "badge": "mini-ali-ui/es/badge/index",
+    "list": "mini-ali-ui/es/list/index",
+    "list-item": "mini-ali-ui/es/list/list-item/index"
+  }
+}

@@ -1,0 +1,55 @@
+<import-sjs from="/pages/shelf/numberUtil.sjs" name="numberUtil"></import-sjs>
+<import-sjs from="/pages/shelf/dict.sjs" name="dict"></import-sjs>>
+<view class="page">
+  <!--图片轮播-->
+  <container className="container-item">
+    <title slot="header" hasLine="true" showIcon="true">{{info.titleCh}}</title>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" style="width: 414px; height: 240px;">
+      <block a:for="{{background}}">
+        <swiper-item>
+          <image mode="widthFix" src="{{item}}" style="width:95%;"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view slot="footer" class="footer" style="padding-left: 12px;">
+      <text decode="{{true}}">综合评分&nbsp;&nbsp;
+        <badge text="{{info.score}}"/></text>
+    </view>
+  </container>
+  <!--游戏信息-->
+  <container className="container-item">
+    <view class="item" style="height: auto; text-align: left;">
+      {{info.intro}}
+    </view>
+  </container>
+  <!--媒体评分-->
+  <container className="container-item">
+    <list>
+      <view slot="header">
+      媒体评分
+      </view>
+      <block a:for="{{magzine}}">
+        <list-item arrow="{{true}}" upperSubtitle="{{item.subject}}" onClick="go_review" data-mid="{{item.id}}">
+        {{item.magazine}}
+          <badge slot="extra" text="{{item.score}}"/>
+        </list-item>
+      </block>
+    </list>
+  </container>
+  <!--价格-->
+  <container className="container-item">
+    <list>
+      <view slot="header">
+      价格一览
+      </view>
+      <block a:for="{{info.subjects}}">
+        <list-item thumb="{{icon[item.platform]}}" upperSubtitle="{{item.currency}} {{item.latestPrice}}">
+        {{dict.getAreaFlag(item.saleArea)}} {{item.edition}}
+          <view slot="extra">
+          约 {{numberUtil.numberFormat(item.latestPriceCNY, 2)}} 元
+          </view>
+        </list-item>
+      </block>
+    </list>
+  </container>
+</view>

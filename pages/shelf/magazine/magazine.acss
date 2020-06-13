@@ -1,0 +1,33 @@
+.page {
+  display: block;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 100px;
+  box-sizing: border-box;
+  /* background-image: linear-gradient(90deg, #1F81E5 0%, #3264C5 99%); */
+}
+.container {
+  background: #F5F5F5;
+  padding: 24rpx;
+  height: 100%;
+}
+
+.container-item {
+  margin-bottom: 24rpx;
+}
+
+.footer {
+  color: #333;
+  margin-top: 24rpx;
+}
+
+.item {
+  /* background: #eeeeee; */
+  text-align: center;
+  height: 200rpx;
+}
+
+.grid-item {
+  background: #eeeeee;
+  text-align: center;
+}
