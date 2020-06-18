@@ -9,6 +9,11 @@ Page({
     icon: {
       switch: "/images/icon/switch.png",
       ps4: "/images/icon/ps4.png"
+    },
+    magazineLogo: {
+      gamespot: "/images/icon/gamespot.png",
+      metacritic: "/images/icon/metacritic.png",
+      Famitsu: "/images/icon/famitsu.png"
     }
   },
   onLoad(request) {

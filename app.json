@@ -2,7 +2,8 @@
   "pages": [
     "pages/shelf/list/list",
     "pages/shelf/detail/detail",
-    "pages/shelf/magazine/magazine"
+    "pages/shelf/magazine/magazine",
+    "pages/shelf/footer/footer"
   ],
   "plugins": {
     "myPlugin": {

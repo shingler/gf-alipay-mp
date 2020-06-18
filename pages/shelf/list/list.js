@@ -4,7 +4,10 @@ var keyword = "";
 var noMore = false;
 
 Page({
-  data: {},
+  data: {
+    loading_show: "show",
+    end_show: "hide"
+  },
   //加载数据
   onLoad(query) {
     var that = this;
@@ -16,8 +19,10 @@ Page({
   },
   //到底部获取更多
   onReachBottom() {
-    page++;
-    this.get_shelf_list(this, keyword, page);
+    if (!noMore) {
+      page++;
+      this.get_shelf_list(this, keyword, page);
+    }
   },
 
   // 获取游戏库数据
@@ -55,15 +60,23 @@ Page({
           data_list = res.data.results;
         }
         // console.log(data_list);
+        // 是否有更多
+        if (res.data.next == null) {
+          noMore = true;
+        }
         that.setData({
           result: data_list,
-          loadMore: false
+          noMore: noMore,
+          loading_show: noMore ? "hide" : "show",
+          end_show: noMore ? "show" : "hide"
         });
       },
       fail(res) {
+        console.log("error");
         noMore = true;
         that.setData({
-          noMore: true
+          loading_show: "hide",
+          end_show: "show"
         });
       }
     });

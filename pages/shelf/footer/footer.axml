@@ -1,0 +1,3 @@
+<template name="footer">
+  <footer type="copyright" content="© 2020 gf-app.cn. All rights reserved." />
+</template>

@@ -29,7 +29,7 @@
       媒体评分
       </view>
       <block a:for="{{magzine}}">
-        <list-item arrow="{{true}}" upperSubtitle="{{item.subject}}" onClick="go_review" data-mid="{{item.id}}">
+        <list-item arrow="{{true}}" upperSubtitle="{{item.subject}}" onClick="go_review" data-mid="{{item.id}}" thumb="{{magazineLogo[item.magazine]}}">
         {{item.magazine}}
           <badge slot="extra" text="{{item.score}}"/>
         </list-item>
