@@ -5,11 +5,9 @@
   <container className="container-item">
     <title slot="header" hasLine="true" showIcon="true">{{info.titleCh}}</title>
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" style="width: 414px; height: 240px;">
-      <block a:for="{{background}}">
-        <swiper-item>
-          <image mode="widthFix" src="{{item}}" style="width:95%;"/>
-        </swiper-item>
-      </block>
+      <swiper-item a:for="{{background}}">
+        <image mode="aspectFit" lazy-load="{{true}}" default-source="/images/loading.gif" src="{{item}}" style="width:95%;"/>
+      </swiper-item>
     </swiper>
     <view slot="footer" class="footer" style="padding-left: 12px;">
       <text decode="{{true}}">综合评分&nbsp;&nbsp;
