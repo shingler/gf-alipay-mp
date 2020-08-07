@@ -51,7 +51,7 @@
     </list>
   </container>
   <!--相关游戏-->
-  <container className="container-item">
+  <container className="container-item" a:if="{{info.serial_id}}">
     <list>
       <view slot="header">
       相关游戏

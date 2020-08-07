@@ -1,5 +1,5 @@
-// var api_prefix = getApp().globalData.rest.prod;
-var api_prefix = getApp().globalData.rest.dev;
+var api_prefix = getApp().globalData.rest.prod;
+// var api_prefix = getApp().globalData.rest.dev;
 
 Page({
   data: {
