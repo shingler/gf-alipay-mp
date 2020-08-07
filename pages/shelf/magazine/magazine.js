@@ -1,4 +1,6 @@
-var app = getApp();
+// var api_prefix = getApp().globalData.rest.prod;
+var api_prefix = getApp().globalData.rest.dev;
+
 Page({
   data: {
     origin_ifshow: true
@@ -11,7 +13,7 @@ Page({
   //获取媒体评分
   getMagzineScore: function(id, that) {
     my.request({
-      url: app.globalData.rest.prod.magzine + id + "/",
+      url: api_prefix.magzine + id + "/",
       dataType: "json",
       success: function(res) {
         that.setData({

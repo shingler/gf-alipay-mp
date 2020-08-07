@@ -7,14 +7,16 @@ App({
     userInfo: null,
     rest: {
       dev: {
-        list: "https://gfweb.io:8088/api/games/",
-        detail: "https://gfweb.io:8088/api/games/",
-        magzine: "https://gfweb.io:8088/api/magzine/"
+        list: "http://127.0.0.1:8100/games/",
+        detail: "http://127.0.0.1:8100/games/",
+        magzine: "http://127.0.0.1:8100/magzine/",
+        related: "http://127.0.0.1:8100/serial/"
       },
       prod: {
-        list: "https://www.gf-app.cn/api/games/",
-        detail: "https://www.gf-app.cn/api/games/",
-        magzine: "https://www.gf-app.cn/api/magzine/"
+        list: "https://api.gf-app.cn/games/",
+        detail: "https://api.gf-app.cn/games/",
+        magzine: "https://api.gf-app.cn/magzine/",
+        related: "https://api.gf-app.cn/serial/"
       }
     }
   }

@@ -14,14 +14,14 @@
   </container>
   <container className="container-item">
     <view>
-      {{info.comment_trans}}
+      <text>{{info.comment_trans}}</text>
     </view>
     <view slot="footer" class="footer">以上翻译自：百度翻译API</view>
   </container>
   <container className="container-item">
     <title slot="header" type="more" onActionTap="show_origin">查看原文</title>
     <view hidden="{{origin_ifshow}}" id="origin">
-          {{info.comment}}
+      <text>{{info.comment}}</text>
     </view>
   </container>
   </container>

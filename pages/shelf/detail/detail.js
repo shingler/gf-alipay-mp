@@ -1,3 +1,6 @@
+// var api_prefix = getApp().globalData.rest.prod;
+var api_prefix = getApp().globalData.rest.dev;
+
 Page({
   data: {
     background: [],
@@ -18,12 +21,11 @@ Page({
   },
   onLoad(request) {
     // console.log(request);
-    var app = getApp();
     var that = this;
     var intro_data;
     //获取游戏信息
     my.request({
-      url: app.globalData.rest.prod.detail + request["id"] + "/",
+      url: api_prefix.detail + request["id"] + "/",
       dataType: "json",
       success: function(res) {
         res.data.cover = JSON.parse(res.data.cover.replace(/\'/g, '"'));
@@ -51,7 +53,7 @@ Page({
     });
     //获取评分信息
     my.request({
-      url: app.globalData.rest.prod.magzine + "?gameId=" + request["id"],
+      url: api_prefix.magzine + "?gameId=" + request["id"],
       dataType: "json",
       success: function(res) {
         console.log(res);
@@ -66,6 +68,48 @@ Page({
     var mid = e.target.dataset["mid"];
     my.navigateTo({
       url: "/pages/shelf/magazine/magazine?id=" + mid
+    });
+  },
+
+  //到底部获取相关游戏
+  onReachBottom() {
+    // 避免重复加载
+    if (this.data.related) {
+      return;
+    }
+    var serial_id = this.data.info.serial_id;
+    var that = this;
+    if (serial_id != 0) {
+      // 获取相关游戏
+      var req_url =
+        api_prefix.related + serial_id + "?except=" + that.data.info.gameId;
+
+      my.request({
+        url: req_url,
+        dataType: "json",
+        success: function(res) {
+          console.log(res);
+          var relate_list = res.data.related_games;
+          if (relate_list.length > 0) {
+            console.log(relate_list);
+            that.setData({
+              related: relate_list
+            });
+          }
+        }
+      });
+    }
+  },
+
+  /**
+   * 跳转到对应的位置
+   */
+  go_detail: function(event) {
+    // console.log(event);
+    var game_id = event.target.dataset.gid;
+    console.log(game_id);
+    my.navigateTo({
+      url: "/pages/shelf/detail/detail?id=" + game_id
     });
   }
 });

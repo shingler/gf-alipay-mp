@@ -2,6 +2,8 @@ var app = getApp();
 var page = 1;
 var keyword = "";
 var noMore = false;
+// var api_prefix = app.globalData.rest.prod;
+var api_prefix = app.globalData.rest.dev;
 
 Page({
   data: {
@@ -28,7 +30,7 @@ Page({
   // 获取游戏库数据
   get_shelf_list(that, keyword, page = 1) {
     console.log(keyword);
-    var req_url = app.globalData.rest.prod.list;
+    var req_url = api_prefix.list;
     req_url += "?page=" + page;
     if (keyword.length > 0) {
       req_url += "&keyword=" + encodeURI(keyword);
