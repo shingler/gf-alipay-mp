@@ -10,12 +10,14 @@ App({
         list: "http://127.0.0.1:8100/games/",
         detail: "http://127.0.0.1:8100/games/",
         magzine: "http://127.0.0.1:8100/magzine/",
-        login: "http://127.0.0.1:8100/connect/authenticate"
+        login: "http://127.0.0.1:8100/connect/authenticate",
+        related: "http://127.0.0.1:8100/serial/"
       },
       prod: {
         list: "https://api.gf-app.cn/games/",
         detail: "https://api.gf-app.cn/games/",
-        magzine: "https://api.gf-app.cn/magzine/"
+        magzine: "https://api.gf-app.cn/magzine/",
+        related: "https://api.gf-app.cn/serial/"
       }
     }
   }

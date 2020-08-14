@@ -17,7 +17,7 @@
   <!--游戏信息-->
   <container className="container-item">
     <view class="item" style="height: auto; text-align: left;">
-      {{info.intro}}
+      <text>{{info.intro}}</text>
     </view>
   </container>
   <!--媒体评分-->
@@ -46,6 +46,19 @@
           <view slot="extra">
           约 {{numberUtil.numberFormat(item.latestPriceCNY, 2)}} 元
           </view>
+        </list-item>
+      </block>
+    </list>
+  </container>
+  <!--相关游戏-->
+  <container className="container-item" a:if="{{info.serial_id}}">
+    <list>
+      <view slot="header">
+      相关游戏
+      </view>
+      <block a:for="{{related}}">
+        <list-item thumb="{{item.mp_cover[0]}}" arrow="{{true}}" upperSubtitle="{{item.hasChinese?'有中文':''}}" onClick="go_detail" data-gid="{{item.gameId}}">
+          {{item.titleCh}}
         </list-item>
       </block>
     </list>
