@@ -12,6 +12,9 @@ Page({
   onLoad(query) {
     var that = this;
     this.get_shelf_list(that, "");
+    my.switchTab({
+      url: "list"
+    });
   },
   //下拉刷新
   onPullDownRefresh() {

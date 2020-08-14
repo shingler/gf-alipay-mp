@@ -1,0 +1,3 @@
+button.am-button-warn {
+    margin-bottom: 5px;
+}

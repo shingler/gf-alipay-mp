@@ -3,7 +3,9 @@
     "pages/shelf/list/list",
     "pages/shelf/detail/detail",
     "pages/shelf/magazine/magazine",
-    "pages/shelf/footer/footer"
+    "pages/shelf/footer/footer",
+    "pages/me/index/index",
+    "pages/me/index/index"
   ],
   "plugins": {
     "myPlugin": {
@@ -15,5 +17,20 @@
     "transparentTitle": "always",
     "titlePenetrate": true,
     "backgroundImageColor": "#3264C5"
+  },
+  "tabBar": {
+    "textColor": "#dddddd",
+    "selectedColor": "#49a9ee",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/shelf/list/list",
+        "name": "首页"
+      },
+      {
+        "pagePath": "pages/me/index/index",
+        "name": "我的"
+      }
+    ]
   }
 }

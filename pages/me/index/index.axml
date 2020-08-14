@@ -1,0 +1,26 @@
+<view class="page">
+  <view class="page-content">
+    <view>
+      <button type="primary" onTap="getAuthCode">
+      获取授权码
+      </button>
+      <!--带用户名和摘要描述头像组件-->
+      <avatar src="xxx" size="lg" name="用户名" desc="摘要描述" />
+    </view>
+    <am-list>
+      <list-item arrow="{{true}}" onClick="go_detail">
+        <am-icon type="like_" size="20" /> 我的收藏
+      </list-item>
+      <list-item arrow="{{true}}" onClick="go_detail">
+        <am-icon type="edit_" size="20" /> 修改用户名
+      </list-item>
+      <list-item arrow="{{true}}" onClick="go_detail">
+        <am-icon type="person-circle_" size="20" /> 修改头像
+      </list-item>
+    </am-list>
+    <button type="warn" shape="default" capsuleSize="medium" capsuleMinWidth="{{true}}">
+   退出登录
+    </button>
+  </view>
+  <template is="footer"/>
+</view>
