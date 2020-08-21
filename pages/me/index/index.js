@@ -6,7 +6,6 @@ Page({
     let token = my.getStorageSync({ key: "gf_token" }).data;
     console.log(token);
     if (token) {
-      this.setData({ token: token });
       this.getUserInfo(token);
     }
   },
@@ -60,11 +59,27 @@ Page({
       data: { token: token },
       success: res => {
         console.log(res);
-        that.setData({
-          userInfo: res.data
-        });
+        if (res.data.status == 0) {
+          //token不可用
+          my.removeStorage({
+            key: "gf_token",
+            success: res => {}
+          });
+        } else {
+          that.setData({
+            userInfo: res.data,
+            token: token
+          });
+        }
       },
       fail: res => {}
+    });
+  },
+
+  // 跳转到我的收藏
+  go_my_favorite() {
+    my.navigateTo({
+      url: "/pages/me/favorite/favorite"
     });
   }
 });

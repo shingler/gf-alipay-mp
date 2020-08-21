@@ -8,7 +8,7 @@
       <avatar a:if="{{userInfo}}" src="{{userInfo.userprofile.avatar}}" size="lg" name="{{userInfo.username}}" desc="UID:{{userInfo.id}}" />
     </view>
     <am-list>
-      <list-item arrow="{{true}}" onClick="go_detail">
+      <list-item arrow="{{true}}" onClick="go_my_favorite">
         <am-icon type="like_" size="20" /> 我的收藏
       </list-item>
       <list-item arrow="{{true}}" onClick="go_detail">

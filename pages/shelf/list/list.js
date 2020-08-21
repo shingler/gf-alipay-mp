@@ -2,8 +2,8 @@ var app = getApp();
 var page = 1;
 var keyword = "";
 var noMore = false;
-var api_prefix = app.globalData.rest.prod;
-// var api_prefix = app.globalData.rest.dev;
+// var api_prefix = app.globalData.rest.prod;
+var api_prefix = app.globalData.rest.dev;
 
 Page({
   data: {

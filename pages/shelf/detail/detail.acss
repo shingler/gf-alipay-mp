@@ -10,3 +10,8 @@
 .container-item{
   width: 94%;
 }
+/* 收藏开关 */
+.switch-star{
+  display:inline;
+  margin-left:48%;
+}

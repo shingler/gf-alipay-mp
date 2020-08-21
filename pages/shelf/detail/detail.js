@@ -1,5 +1,5 @@
-var api_prefix = getApp().globalData.rest.prod;
-// var api_prefix = getApp().globalData.rest.dev;
+// var api_prefix = getApp().globalData.rest.prod;
+var api_prefix = getApp().globalData.rest.dev;
 
 Page({
   data: {
@@ -9,6 +9,7 @@ Page({
     autoplay: true,
     interval: 4000,
     duration: 100,
+    stared: false,
     icon: {
       switch: "/images/icon/switch.png",
       ps4: "/images/icon/ps4.png"
@@ -62,6 +63,29 @@ Page({
         });
       }
     });
+    //当前登录用户是否已收藏
+    let token = my.getStorageSync({ key: "gf_token" }).data;
+    if (token) {
+      my.request({
+        url: api_prefix.check_fav + "/" + request["id"],
+        method: "get",
+        dataType: "json",
+        data: { token: token },
+        success: res => {
+          if (res.data.status == 0) {
+            my.showToast({
+              content: res.data.msg,
+              duration: 3000
+            });
+          } else {
+            that.setData({
+              stared: res.data.data.state
+            });
+          }
+        },
+        fail: res => {}
+      });
+    }
   },
   //跳转到媒体评测页面
   go_review(e) {
@@ -70,36 +94,73 @@ Page({
       url: "/pages/shelf/magazine/magazine?id=" + mid
     });
   },
-
-  //到底部获取相关游戏
-  onReachBottom() {
-    // 避免重复加载
-    if (this.data.related) {
-      return;
+  // 切换收藏状态按钮
+  switchStarChange(e) {
+    console.log(e);
+    let that = this;
+    if (e.detail.value) {
+      url = api_prefix.fav_do;
+    } else {
+      url = api_prefix.fav_undo;
     }
-    var serial_id = this.data.info.serial_id;
-    var that = this;
-    if (serial_id != 0) {
-      // 获取相关游戏
-      var req_url =
-        api_prefix.related + serial_id + "?except=" + that.data.info.gameId;
+    url += "/" + e.currentTarget.dataset.gameid;
 
-      my.request({
-        url: req_url,
-        dataType: "json",
-        success: function(res) {
-          console.log(res);
-          var relate_list = res.data.related_games;
-          if (relate_list.length > 0) {
-            console.log(relate_list);
-            that.setData({
-              related: relate_list
-            });
-          }
-        }
+    let token = my.getStorageSync({ key: "gf_token" }).data;
+    if (!token) {
+      my.showToast({
+        content: "请先登录",
+        duration: 1000
       });
     }
+    my.request({
+      url: url,
+      method: "post",
+      data: { token: token },
+      success: res => {
+        // console.log(res);
+        if (res.data.status == 0) {
+          my.showToast({
+            content: res.data.msg,
+            duration: 3000
+          });
+        }
+        this.setData({
+          stared: res.data.data.state == 1 ? true : false
+        });
+      },
+      fail: res => {}
+    });
   },
+
+  //到底部获取相关游戏
+  // onReachBottom() {
+  //   // 避免重复加载
+  //   if (this.data.related) {
+  //     return;
+  //   }
+  //   var serial_id = this.data.info.serial_id;
+  //   var that = this;
+  //   if (serial_id != 0) {
+  //     // 获取相关游戏
+  //     var req_url =
+  //       api_prefix.related + serial_id + "?except=" + that.data.info.gameId;
+
+  //     my.request({
+  //       url: req_url,
+  //       dataType: "json",
+  //       success: function(res) {
+  //         console.log(res);
+  //         var relate_list = res.data.related_games;
+  //         if (relate_list.length > 0) {
+  //           console.log(relate_list);
+  //           that.setData({
+  //             related: relate_list
+  //           });
+  //         }
+  //       }
+  //     });
+  //   }
+  // },
 
   /**
    * 跳转到对应的位置

@@ -12,6 +12,11 @@
     <view slot="footer" class="footer" style="padding-left: 12px;">
       <text decode="{{true}}">综合评分&nbsp;&nbsp;
         <badge text="{{info.score}}"/></text>
+      <view class="switch-star">
+        <am-icon type="collect" size="lg" a:if="{{!stared}}"></am-icon>
+        <am-icon type="star_" size="lg" a:if="{{stared}}"></am-icon>
+        <am-switch checked="{{stared}}" onChange="switchStarChange" data-gameid="{{info.gameId}}"/>
+      </view>
     </view>
   </container>
   <!--游戏信息-->

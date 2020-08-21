@@ -5,7 +5,8 @@
     "pages/shelf/magazine/magazine",
     "pages/shelf/footer/footer",
     "pages/me/index/index",
-    "pages/me/index/index"
+    "pages/me/favorite/favorite",
+    "pages/me/favorite/favorite"
   ],
   "plugins": {
     "myPlugin": {

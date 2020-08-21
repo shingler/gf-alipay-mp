@@ -1,0 +1,11 @@
+<import src="/pages/shelf/footer/footer.axml"/>
+<view class="page">
+  <view class="page-content">
+    <am-list a:for="{{favorites}}" a:for-index="idx" a:for-item="item">
+      <list-item thumb="{{item.shelf.mp_cover[0]}}" arrow="{{true}}" upperSubtitle="{{item.shelf.hasChinese?'有中文':''}}" onClick="go_detail" data-gid="{{item.shelf_id}}">
+        {{item.shelf.titleCh}}
+      </list-item>
+    </am-list>
+  </view>
+  <template is="footer"/>
+</view>
