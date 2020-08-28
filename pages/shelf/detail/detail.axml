@@ -1,5 +1,6 @@
 <import-sjs from="/pages/shelf/numberUtil.sjs" name="numberUtil"></import-sjs>
-<import-sjs from="/pages/shelf/dict.sjs" name="dict"></import-sjs>>
+<import-sjs from="/pages/shelf/dict.sjs" name="dict"></import-sjs>
+<import src="/pages/shelf/footer/footer.axml"/>
 <view class="page">
   <!--图片轮播-->
   <container className="container-item">
@@ -68,4 +69,5 @@
       </block>
     </list>
   </container>
+  <template is="footer"/>
 </view>

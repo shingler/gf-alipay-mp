@@ -17,7 +17,9 @@ App({
         check_fav: "http://127.0.0.1:8100/favorite/check",
         fav_do: "http://127.0.0.1:8100/favorite/do",
         fav_undo: "http://127.0.0.1:8100/favorite/undo",
-        changename: "http://127.0.0.1:8100/user/changename"
+        changename: "http://127.0.0.1:8100/user/changename",
+        avatar_sign: "http://127.0.0.1:8100/user/avatar_sign",
+        change_avatar: "http://127.0.0.1:8100/user/change_avatar"
       },
       prod: {
         list: "https://api.gf-app.cn/games/",
@@ -27,10 +29,12 @@ App({
         login: "https://api.gf-app.cn/connect/authenticate",
         userInfo: "https://api.gf-app.cn/user/get",
         favorite: "https://api.gf-app.cn/favorite/my",
-        check_fav: "http://api.gf-app.cn/favorite/check",
+        check_fav: "https://api.gf-app.cn/favorite/check",
         fav_do: "https://api.gf-app.cn/favorite/do",
         fav_undo: "https://api.gf-app.cn/favorite/undo",
-        changename: "https://api.gf-app.cn/user/changename"
+        changename: "https://api.gf-app.cn/user/changename",
+        avatar_sign: "https://api.gf-app.cn/user/avatar_sign",
+        change_avatar: "https://api.gf-app.cn/user/change_avatar"
       }
     }
   }

@@ -6,6 +6,7 @@
         {{item.shelf.titleCh}}
       </list-item>
     </am-list>
+    <footer style="margin-top:20px;" a:if="{{favorites.length==0}}" showEndIcon="{{true}}" type="normal" content="还没有收藏游戏" />
   </view>
   <template is="footer"/>
 </view>

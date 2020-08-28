@@ -2,8 +2,8 @@ var app = getApp();
 var page = 1;
 var keyword = "";
 var noMore = false;
-// var api_prefix = app.globalData.rest.prod;
-var api_prefix = app.globalData.rest.dev;
+var api_prefix = app.globalData.rest.prod;
+// var api_prefix = app.globalData.rest.dev;
 
 Page({
   data: {
@@ -32,7 +32,7 @@ Page({
 
   // 获取游戏库数据
   get_shelf_list(that, keyword, page = 1) {
-    console.log(keyword);
+    // console.log(keyword);
     var req_url = api_prefix.list;
     req_url += "?page=" + page;
     if (keyword.length > 0) {
@@ -93,7 +93,7 @@ Page({
   go_detail: function(event) {
     // console.log(event);
     var game_id = event.target.dataset.gid;
-    console.log(game_id);
+    // console.log(game_id);
     my.navigateTo({
       url: "/pages/shelf/detail/detail?id=" + game_id
     });

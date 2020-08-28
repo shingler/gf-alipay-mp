@@ -3,6 +3,7 @@
   "usingComponents": {
     "container": "mini-ali-ui/es/container/index",
     "title": "mini-ali-ui/es/title/index",
-    "badge": "mini-ali-ui/es/badge/index"
+    "badge": "mini-ali-ui/es/badge/index",
+    "footer": "mini-ali-ui/es/footer/index"
   }
 }

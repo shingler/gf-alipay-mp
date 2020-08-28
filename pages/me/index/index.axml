@@ -1,3 +1,4 @@
+<import src="/pages/shelf/footer/footer.axml"/>
 <view class="page">
   <view class="page-content">
     <view>
@@ -11,10 +12,10 @@
       <list-item arrow="{{true}}" onClick="go_my_favorite">
         <am-icon type="like_" size="20" /> 我的收藏
       </list-item>
-      <list-item arrow="{{true}}" onClick="go_detail">
+      <list-item arrow="{{true}}" onClick="go_changename">
         <am-icon type="edit_" size="20" /> 修改用户名
       </list-item>
-      <list-item arrow="{{true}}" onClick="go_detail">
+      <list-item arrow="{{true}}" onClick="chooseImage">
         <am-icon type="person-circle_" size="20" /> 修改头像
       </list-item>
     </am-list>

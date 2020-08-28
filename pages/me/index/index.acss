@@ -4,3 +4,8 @@ button.am-button-warn {
 .am-avatar {
     margin: 10px;
 }
+.am-footer{
+    color: #ffffff;
+    margin: auto;
+    text-align:center;
+}

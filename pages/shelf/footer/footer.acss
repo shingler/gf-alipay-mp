@@ -1,0 +1,5 @@
+.am-footer{
+    color: #ffffff;
+    margin: auto;
+    text-align:center;
+}

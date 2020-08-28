@@ -1,12 +1,12 @@
-// var api_prefix = getApp().globalData.rest.prod
-var api_prefix = getApp().globalData.rest.dev;
+var api_prefix = getApp().globalData.rest.prod;
+// var api_prefix = getApp().globalData.rest.dev;
 
 Page({
   data: {},
   onLoad() {
     let token = my.getStorageSync({ key: "gf_token" }).data;
     let that = this;
-    console.log(token);
+    // console.log(token);
     if (!token) {
       my.showToast({
         content: "请先登录",

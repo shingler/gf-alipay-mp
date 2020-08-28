@@ -6,7 +6,8 @@
     "pages/shelf/footer/footer",
     "pages/me/index/index",
     "pages/me/favorite/favorite",
-    "pages/me/favorite/favorite"
+    "pages/me/favorite/favorite",
+    "pages/me/changename/changename"
   ],
   "plugins": {
     "myPlugin": {

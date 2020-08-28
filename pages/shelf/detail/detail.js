@@ -1,5 +1,5 @@
-// var api_prefix = getApp().globalData.rest.prod;
-var api_prefix = getApp().globalData.rest.dev;
+var api_prefix = getApp().globalData.rest.prod;
+// var api_prefix = getApp().globalData.rest.dev;
 
 Page({
   data: {
@@ -57,7 +57,7 @@ Page({
       url: api_prefix.magzine + "?gameId=" + request["id"],
       dataType: "json",
       success: function(res) {
-        console.log(res);
+        // console.log(res);
         that.setData({
           magzine: res.data
         });
@@ -96,7 +96,7 @@ Page({
   },
   // 切换收藏状态按钮
   switchStarChange(e) {
-    console.log(e);
+    // console.log(e);
     let that = this;
     if (e.detail.value) {
       url = api_prefix.fav_do;
